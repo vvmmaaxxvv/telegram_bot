@@ -42,16 +42,6 @@
         msg: "PostgreSQL is not installed on this host."
       when: psql_version.failed
 
-    - name: Check if PostgreSQL cluster exists
-      shell: |
-        if pg_lsclusters | grep -q '14 main'; then
-          echo 'Cluster exists'
-        else
-          pg_createcluster 14 main
-        fi
-      register: create_cluster
-      ignore_errors: true
-
     - name: Check if PostgreSQL is running
       command: pg_ctlcluster 14 main status
       register: postgres_status
@@ -217,15 +207,12 @@
     - name: Install Python packages
       pip:
         name:
-          - python-telegram-bot==13.7
-          - psycopg2-binary
+          - python-telegram-bot
           - python-dotenv
           - paramiko
+          - asyncssh
+          - asyncpg
           - requests
-          - Requests
-          - urllib3==1.26.15
-          - requests-toolbelt==0.10.1
-          - docker
 
     - name: Run Bot
       command: python3 ./BD_bot.py
