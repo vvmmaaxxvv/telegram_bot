@@ -17,7 +17,7 @@ all:
     DB_REPL_PORT: 5432
     DB_HOST: 192.168.40.131
     DB_PORT: 5432
-    DB_USER: volkovmv
+    DB_USER: postgres
     DB_PASSWORD: 123
     DB_DATABASE: vmv_tg
     TOKEN: 7594658523:AAG68k3aTBKN7bi1lc7IdB_0Epu5tU1Puyo
