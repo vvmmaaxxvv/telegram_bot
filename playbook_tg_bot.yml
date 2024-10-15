@@ -112,7 +112,7 @@
       ignore_errors: true
 
     - name: Create Phone Numbers table
-      command: psql -d {{ hostvars[inventory_hostname]['DB_DATABASE'] }} -c "CREATE TABLE phone_numbers (id serial PRIMARY KEY, phone_number text);"
+      command: psql -d {{ hostvars[inventory_hostname]['DB_DATABASE'] }} -c "CREATE TABLE phones (id serial PRIMARY KEY, phone_number text);"
       become_user: postgres
       ignore_errors: true
 
