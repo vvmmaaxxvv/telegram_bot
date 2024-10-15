@@ -1,0 +1,27 @@
+all:
+  hosts:
+    volkovmv1:
+      ansible_user: volkovmv
+      ansible_ssh_pass: 123
+      ansible_host: 192.168.40.131
+
+    volkovmv2: 
+      ansible_user: volkvomv
+      ansible_ssh_pass: 123
+      ansible_host: 192.168.40.130
+
+  vars:
+    DB_REPL_HOST: 192.168.40.130
+    DB_REPL_USER: repl_user
+    DB_REPL_PASSWORD: 123
+    DB_REPL_PORT: 5432
+    DB_HOST: 192.168.40.131
+    DB_PORT: 5432
+    DB_USER: volkovmv
+    DB_PASSWORD: 123
+    DB_DATABASE: vmv_tg
+    TOKEN: asdf
+    RM_HOST: 192.168.40.131
+    RM_PORT: 22
+    RM_USER: volkovmv
+    RM_PASSWORD: 123
