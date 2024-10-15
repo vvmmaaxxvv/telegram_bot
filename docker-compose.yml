@@ -31,7 +31,6 @@ services:
 
   tg_bot:
     build: ./bot_image/
-    image: 192.168.0.102:5000/bot_image:latest
     container_name: tg_bot
     depends_on:
       - db_master
