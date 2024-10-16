@@ -5,6 +5,7 @@ cp /pg_hba.conf "$PGDATA/pg_hba.conf"
 cp /postgresql.conf "$PGDATA/postgresql.conf"
 
 echo "host replication ${DB_REPL_USER} 0.0.0.0/0 scram-sha-256" >> "$PGDATA/pg_hba.conf"
+echo "port = ${DB_PORT}" >> "$PGDATA/postgresql.conf"
 
 psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOSQL
     CREATE ROLE $DB_REPL_USER WITH REPLICATION PASSWORD '$DB_REPL_PASSWORD' LOGIN;
