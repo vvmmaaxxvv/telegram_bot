@@ -12,7 +12,6 @@ services:
       DB_REPL_PASSWORD: ${DB_REPL_PASSWORD}
     ports:
       - ${DB_PORT}:5432
-      - 6000:6000
     networks:
       - pg_network
 
