@@ -3,7 +3,7 @@ services:
     build: ./db_image/
     container_name: ${DB_HOST}
     volumes:
-      - ./postgresql_log:/var/log/postgresql
+      - postgres_logs:/var/log/postgresql
     environment:
       POSTGRES_DB: vmv_tg
       POSTGRES_USER: ${DB_USER}
@@ -12,6 +12,7 @@ services:
       DB_REPL_PASSWORD: ${DB_REPL_PASSWORD}
     ports:
       - ${DB_PORT}:5432
+      - 6000:6000
     networks:
       - pg_network
 
@@ -35,7 +36,7 @@ services:
     depends_on:
       - db_master
     volumes:
-      - ./postgresql_log:/var/log/postgresql
+      - postgres_logs:/var/log/postgresql
     networks:
       - pg_network
     environment:
