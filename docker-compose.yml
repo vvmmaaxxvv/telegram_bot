@@ -49,10 +49,10 @@ services:
       DB_HOST: ${DB_HOST}
       DB_PORT: ${DB_PORT}
       DB_DATABASE: ${DB_DATABASE}
-      DB_REPL_USER: ${DB_USER}
-      DB_REPL_PASSWORD: ${DB_PASSWORD}
-      DB_REPL_HOST: ${DB_HOST}
-      DB_REPL_PORT: ${DB_PORT}
+      DB_REPL_USER: ${DB_REPL_USER}
+      DB_REPL_PASSWORD: ${DB_REPL_PASSWORD}
+      DB_REPL_HOST: ${DB_REPL_HOST}
+      DB_REPL_PORT: ${DB_REPL_PORT}
 
 volumes:
   postgres_logs:
