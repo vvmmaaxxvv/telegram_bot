@@ -10,8 +10,6 @@ services:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       DB_REPL_USER: ${DB_REPL_USER}
       DB_REPL_PASSWORD: ${DB_REPL_PASSWORD}
-    ports:
-      - ${DB_PORT}:5432
     networks:
       - pg_network
 
@@ -22,8 +20,6 @@ services:
       DB_HOST: ${DB_HOST}
       DB_REPL_USER: ${DB_REPL_USER}
       DB_REPL_PASSWORD: ${DB_REPL_PASSWORD}
-    ports:
-      - ${DB_REPL_PORT}:5432
     depends_on:
       - ${DB_HOST}
     networks:
