@@ -6,7 +6,7 @@ RUN chmod 750 /var/lib/postgresql/data
 ENTRYPOINT [ "bash", "-c", "\
 cat <<EOF > /etc/postgresql/postgresql.conf \n\
 listen_addresses = '*' \n\
-port = 5432 \n\
+port = ${DB_REPL_PORT} \n\
 EOF\n\
 rm -rf /var/lib/postgresql/data/* \n\
 sleep 10 \n\
